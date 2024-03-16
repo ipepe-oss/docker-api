@@ -1,13 +1,16 @@
 name: docker-api
-version: 0.1.0
+version: 0.2.0
 
 authors:
   - Chris Watson <chris@watzon.me>
+  - Patryk Ptasinski <patryk@ipepe.pl>
 
-crystal: 0.24.1
+crystal: '>= 1.11.2'
 
 dependencies:
   halite:
     github: icyleaf/halite
+  json_mapping:
+    github: crystal-lang/json_mapping.cr
 
 license: MIT

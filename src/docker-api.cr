@@ -1,7 +1,8 @@
-require "logger"
+require "log"
 require "json"
 require "openssl"
 require "http"
+require "json_mapping"
 
 require "./core_ext/**"
 require "./docker/version"
@@ -20,8 +21,7 @@ module Docker
   VERSION = "0.1.0"
   API_VERSION = "1.24"
 
-  Logger = ::Logger.new(STDOUT)
-  Logger.level = ::Logger::INFO
+  Log = ::Log.setup(:info)
 
   DEFAULT_URL = "unix:///var/run/docker.sock"
   DEFAULT_CERT_PATH = "#{ENV["HOME"]}/.docker"
