@@ -11,7 +11,7 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   docker-api:
-    github: watzon/docker-api
+    github: ipepe-oss/docker-api
 ```
 
 ## Usage
