@@ -31,7 +31,8 @@ module Docker
       client = nil
 
       if unix?
-        client = HTTP::Client.unix(@url.to_s.sub(/^unix:\/\//, ""))
+        unix = UNIXSocket.new(@url.to_s.sub(/^unix:\/\//, ""))
+        client = HTTP::Client.new(unix, "", 80)
       elsif verify_tls?
         client = HTTP::Client.new(@url.host.not_nil!, @url.port.not_nil!, true)
         client.ssl_context = ssl_context
